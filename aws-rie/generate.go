@@ -16,12 +16,8 @@ func (b *Generate) Generate(context packit.GenerateContext) (packit.GenerateResu
 	r := strings.NewReader(`ARG base_image
 	FROM ${base_image}
 	RUN mkdir -p ~/.aws-lambda-rie
-	USER root
-	RUN apt-get update && apt-get install -y curl
 	RUN curl -Lo ~/.aws-lambda-rie/aws-lambda-rie https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie
-	RUN chmod +x ~/.aws-lambda-rie/aws-lambda-rie
-	ARG user_id
-	USER ${user_id}`)
+	RUN chmod +x ~/.aws-lambda-rie/aws-lambda-rie`)
 
 	return packit.GenerateResult{
 		RunDockerfile: r,
