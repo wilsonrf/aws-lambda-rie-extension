@@ -5,10 +5,10 @@ import (
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
-type Build struct {
+type Generate struct {
 	Logger scribe.Logger
 }
 
-func (b *Build) Build(packit.BuildContext) (packit.BuildResult, error) {
-	return packit.BuildResult{}, nil
+func (b *Generate) Build(packit.GenerateContext) (packit.GenerateResult, error) {
+	return packit.GenerateResult{}, nil
 }
