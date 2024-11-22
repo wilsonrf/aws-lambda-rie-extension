@@ -1,8 +1,16 @@
 package main
 
-import "github.com/paketo-buildpacks/packit/v2"
+import (
+	"os"
+
+	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/scribe"
+	awsrie "github.com/wilsonrf/aws-rie-extension/aws-rie"
+)
 
 func main() {
-
-	packit.Run()
+	logger := scribe.NewLogger(os.Stdout)
+	detect := awsrie.Detect{Logger: logger}
+	generate := awsrie.Generate{Logger: logger}
+	packit.RunExtension(detect.Detect, generate.Generate)
 }

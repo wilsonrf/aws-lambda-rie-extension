@@ -9,6 +9,6 @@ type Generate struct {
 	Logger scribe.Logger
 }
 
-func (b *Generate) Build(packit.GenerateContext) (packit.GenerateResult, error) {
+func (b *Generate) Generate(packit.GenerateContext) (packit.GenerateResult, error) {
 	return packit.GenerateResult{}, nil
 }
