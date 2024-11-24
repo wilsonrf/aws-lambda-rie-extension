@@ -4,7 +4,7 @@ api = "0.10"
 # Extension ID and metadata
 [extension]
 id = "github.com/wilsonrf/aws-rie-extension"
-version = "0.0.1"
+version = "0.1.0"
 name = "AWS RIE Extension"
 homepage = "https://github.com/wilsonrf/aws-rie-extension"
 description = "A simple extension that installs aws rie to the run image"
