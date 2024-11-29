@@ -1,0 +1,6 @@
+:github: https://github.com/wilsonrf/aws-lambda-rie-extension
+:registry: ghcr.io/wilsonrf/aws-lambda-rie-extension
+
+= AWS Lambda RIE Extension
+
+link:{registry}[{registry}]
