@@ -1,27 +1,26 @@
-/*
- * Copyright 2012-2024 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 api = "0.10"
 
 [extension]
 id = "wilsonrf/com.wilsonfranca.aws-lambda-rie-extension"
-version = "0.0.1"
+version = "0.0.2"
 name = "AWS RIE Extension"
 homepage = "https://github.com/wilsonrf/aws-lambda-rie-extension"
 description = "A simple extension that installs aws lambda runtime interface emulator to the run image"
 
 [metadata]
-  pre-package = "./scripts/build.sh"
-  include-files = ["bin/generate", "bin/detect", "bin/run", "extension.toml"]
+  pre-package = "./scripts/build.sh --target linux/amd64 --target linux/arm64"
+  include-files = ["linux/amd64/bin/generate",
+    "linux/amd64/bin/detect",
+    "linux/amd64/bin/run",
+    "linux/arm64/bin/generate",
+    "linux/arm64/bin/detect",
+    "linux/arm64/bin/run",
+    "extension.toml"]
+
+[[targets]]
+  os = "linux"
+  arch = "amd64"
+
+[[targets]]
+  os = "linux"
+  arch = "arm64"
